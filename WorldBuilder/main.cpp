@@ -79,6 +79,10 @@ int main(int, char const**)
         // Clear screen
         window.clear();
         
+        for(Sprite* sprite: AssetManager::instance().sprites){
+            window.draw(*sprite);
+        }
+        
         // Draw the sprite
         //window.draw(sprite);
         

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		08558D5921506E1B00320B1A /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 08558D5821506E1B00320B1A /* ResourcePath.mm */; };
 		08558D5C21506E1B00320B1A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08558D5B21506E1B00320B1A /* main.cpp */; };
-		08558D5F21506E1B00320B1A /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08558D5E21506E1B00320B1A /* cute_image.jpg */; };
 		08558D6121506E1B00320B1A /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 08558D6021506E1B00320B1A /* nice_music.ogg */; };
 		08558D6321506E1B00320B1A /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08558D6221506E1B00320B1A /* sansation.ttf */; };
 		08558D6521506E1B00320B1A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 08558D6421506E1B00320B1A /* icon.png */; };
@@ -22,7 +21,6 @@
 		08558D5821506E1B00320B1A /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
 		08558D5A21506E1B00320B1A /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		08558D5B21506E1B00320B1A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		08558D5E21506E1B00320B1A /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
 		08558D6021506E1B00320B1A /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
 		08558D6221506E1B00320B1A /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
 		08558D6421506E1B00320B1A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				08558D6B215070CD00320B1A /* Sprite-0001.png */,
-				08558D5E21506E1B00320B1A /* cute_image.jpg */,
 				08558D6021506E1B00320B1A /* nice_music.ogg */,
 				08558D6221506E1B00320B1A /* sansation.ttf */,
 				08558D6421506E1B00320B1A /* icon.png */,
@@ -154,7 +151,6 @@
 				08558D6521506E1B00320B1A /* icon.png in Resources */,
 				08558D6321506E1B00320B1A /* sansation.ttf in Resources */,
 				08558D6121506E1B00320B1A /* nice_music.ogg in Resources */,
-				08558D5F21506E1B00320B1A /* cute_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
