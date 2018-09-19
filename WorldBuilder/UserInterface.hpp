@@ -12,12 +12,12 @@
 #include <stdio.h>
 #include "AssetManager.hpp"
 
-#endif /* UserInterface_hpp */
+using namespace sfg;
 
 class UserInterface{
 public:
     static UserInterface& instance();
-    RenderWindow mainWindow{VideoMode(800, 600), "Asset Manager"};
+    RenderWindow mainWindow{VideoMode(1600, 1200), "Asset Manager"};
     void displayAvailableSprites(vector<Sprite*> sprites);
     void render();
 private:
@@ -25,3 +25,4 @@ private:
     UserInterface();
     const float padding = 20;
 };
+#endif /* UserInterface_hpp */

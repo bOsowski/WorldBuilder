@@ -72,4 +72,45 @@ dependencies: \
   /Library/Frameworks/SFML.framework/Headers/Graphics/Glsl.inl \
   /Library/Frameworks/SFML.framework/Headers/Graphics/Sprite.hpp \
   /Library/Frameworks/SFML.framework/Headers/Graphics/Text.hpp \
-  /Users/bOsowski/Documents/XCode/WorldBuilder/WorldBuilder/ResourcePath.hpp
+  /Users/bOsowski/Documents/XCode/WorldBuilder/WorldBuilder/ResourcePath.hpp \
+  /usr/local/include/SFGUI/SFGUI.hpp /usr/local/include/SFGUI/Config.hpp \
+  /usr/local/include/SFGUI/Widgets.hpp \
+  /usr/local/include/SFGUI/Adjustment.hpp \
+  /usr/local/include/SFGUI/Object.hpp \
+  /usr/local/include/SFGUI/Signal.hpp \
+  /usr/local/include/SFGUI/Alignment.hpp \
+  /usr/local/include/SFGUI/Bin.hpp \
+  /usr/local/include/SFGUI/Container.hpp \
+  /usr/local/include/SFGUI/Widget.hpp /usr/local/include/SFGUI/Misc.hpp \
+  /usr/local/include/SFGUI/Box.hpp /usr/local/include/SFGUI/Button.hpp \
+  /usr/local/include/SFGUI/Canvas.hpp \
+  /usr/local/include/SFGUI/CheckButton.hpp \
+  /usr/local/include/SFGUI/ToggleButton.hpp \
+  /usr/local/include/SFGUI/ComboBox.hpp \
+  /usr/local/include/SFGUI/Context.hpp \
+  /usr/local/include/SFGUI/Desktop.hpp \
+  /usr/local/include/SFGUI/Engine.hpp \
+  /usr/local/include/SFGUI/ResourceManager.hpp \
+  /usr/local/include/SFGUI/ResourceManager.inl \
+  /usr/local/include/SFGUI/Engine.inl \
+  /usr/local/include/SFGUI/Desktop.inl \
+  /usr/local/include/SFGUI/Entry.hpp /usr/local/include/SFGUI/Fixed.hpp \
+  /usr/local/include/SFGUI/Frame.hpp /usr/local/include/SFGUI/Image.hpp \
+  /usr/local/include/SFGUI/Label.hpp \
+  /usr/local/include/SFGUI/Notebook.hpp \
+  /usr/local/include/SFGUI/ProgressBar.hpp \
+  /usr/local/include/SFGUI/RadioButton.hpp \
+  /usr/local/include/SFGUI/Range.hpp \
+  /usr/local/include/SFGUI/Renderer.hpp \
+  /usr/local/include/SFGUI/RendererTextureNode.hpp \
+  /usr/local/include/SFGUI/Scale.hpp \
+  /usr/local/include/SFGUI/Scrollbar.hpp \
+  /usr/local/include/SFGUI/ScrolledWindow.hpp \
+  /usr/local/include/SFGUI/Separator.hpp \
+  /usr/local/include/SFGUI/Spinner.hpp \
+  /usr/local/include/SFGUI/SpinButton.hpp \
+  /usr/local/include/SFGUI/Table.hpp \
+  /usr/local/include/SFGUI/TableOptions.hpp \
+  /usr/local/include/SFGUI/TableCell.hpp \
+  /usr/local/include/SFGUI/Viewport.hpp \
+  /usr/local/include/SFGUI/Window.hpp

@@ -8,7 +8,7 @@
 
 #include "AssetManager.hpp"
 
-const char* AssetManager::RESOURCE_FOLDER_PATH = "/Users/bOsowski/Documents/XCode/WorldBuilder/WorldBuilder/Resources";
+const char* AssetManager::RESOURCE_FOLDER_PATH = "/Users/bOsowski/Documents/XCode/WorldBuilder/WorldBuilder/Resources/Textures";
 
 AssetManager::AssetManager(){
     DIR *dir;
@@ -17,13 +17,13 @@ AssetManager::AssetManager(){
         while ((ent = readdir (dir)) != NULL) {
             if(string(ent->d_name) == "." || string(ent->d_name) == "..")continue;
             
-            string full_path = string(RESOURCE_FOLDER_PATH)+ "/" + string(ent->d_name);
-            cout << "Trying to load from " + full_path << endl;
-            sf::Texture* texture = new Texture();
-            if (texture->loadFromFile(full_path)) {
-                Sprite* sprite = new Sprite(*texture, *new IntRect(*new Vector2i(10,10), *new Vector2i(100,100)));
-                sprites.push_back(sprite);
-                cout << "Loaded " + full_path << endl;
+            string *full_path = new string();
+            *full_path = string(RESOURCE_FOLDER_PATH)+ "/" + string(ent->d_name);
+            cout << "Trying to load from " + *full_path << endl;
+            sf::Image imageSource;
+            if (imageSource.loadFromFile(*full_path)) {
+                imageAbsolutePaths.push_back(full_path);
+                cout << "Loaded " + *full_path << endl;
             }
         }
         closedir (dir);

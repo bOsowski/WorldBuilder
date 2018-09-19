@@ -14,6 +14,7 @@
 		08558D6521506E1B00320B1A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 08558D6421506E1B00320B1A /* icon.png */; };
 		08558D6F2150711500320B1A /* AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08558D6D2150711500320B1A /* AssetManager.cpp */; };
 		08558D72215118F200320B1A /* UserInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08558D70215118F200320B1A /* UserInterface.cpp */; };
+		08D3D64821526C28001064A5 /* libsfgui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D3D64721526C28001064A5 /* libsfgui.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,11 +26,16 @@
 		08558D6021506E1B00320B1A /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
 		08558D6221506E1B00320B1A /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
 		08558D6421506E1B00320B1A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		08558D6B215070CD00320B1A /* Sprite-0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Sprite-0001.png"; path = "../../../AssetManager/AssetManager/Resources/Sprite-0001.png"; sourceTree = "<group>"; };
 		08558D6D2150711500320B1A /* AssetManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AssetManager.cpp; sourceTree = "<group>"; };
 		08558D6E2150711500320B1A /* AssetManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AssetManager.hpp; sourceTree = "<group>"; };
 		08558D70215118F200320B1A /* UserInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UserInterface.cpp; sourceTree = "<group>"; };
 		08558D71215118F200320B1A /* UserInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UserInterface.hpp; sourceTree = "<group>"; };
+		08C7070121525FF9003493AA /* Sprite-0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sprite-0001.png"; sourceTree = "<group>"; };
+		08C7070221526094003493AA /* undefined.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undefined.png; sourceTree = "<group>"; };
+		08C707042152691F003493AA /* SFGUI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SFGUI; path = ../../../../../usr/local/share/SFGUI; sourceTree = "<group>"; };
+		08C7070621526969003493AA /* SFGUI-0.3.2 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "SFGUI-0.3.2"; path = "../../../Downloads/SFGUI-0.3.2"; sourceTree = "<group>"; };
+		08D3D64721526C28001064A5 /* libsfgui.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsfgui.dylib; path = "../../../Downloads/SFGUI-0.3.2/lib/libsfgui.dylib"; sourceTree = "<group>"; };
+		08D3D6492152AED8001064A5 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08D3D64821526C28001064A5 /* libsfgui.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,7 @@
 			children = (
 				08558D5521506E1B00320B1A /* WorldBuilder */,
 				08558D5421506E1B00320B1A /* Products */,
+				08C707032152691E003493AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,14 +94,35 @@
 		08558D5D21506E1B00320B1A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				08558D6B215070CD00320B1A /* Sprite-0001.png */,
 				08558D6021506E1B00320B1A /* nice_music.ogg */,
 				08558D6221506E1B00320B1A /* sansation.ttf */,
+				08C706FE21525FB5003493AA /* Textures */,
 				08558D6421506E1B00320B1A /* icon.png */,
 			);
 			name = Resources;
 			path = /Users/bOsowski/Documents/XCode/WorldBuilder/WorldBuilder/Resources;
 			sourceTree = "<absolute>";
+		};
+		08C706FE21525FB5003493AA /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				08C7070221526094003493AA /* undefined.png */,
+				08D3D6492152AED8001064A5 /* orange.png */,
+				08C7070121525FF9003493AA /* Sprite-0001.png */,
+			);
+			name = Textures;
+			path = /Users/bOsowski/Documents/XCode/WorldBuilder/WorldBuilder/Resources/Textures;
+			sourceTree = "<absolute>";
+		};
+		08C707032152691E003493AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08D3D64721526C28001064A5 /* libsfgui.dylib */,
+				08C7070621526969003493AA /* SFGUI-0.3.2 */,
+				08C707042152691F003493AA /* SFGUI */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 

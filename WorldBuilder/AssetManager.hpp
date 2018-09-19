@@ -19,6 +19,8 @@
 #include <algorithm>
 #include <sstream>
 #include <dirent.h>
+#include <SFGUI/SFGUI.hpp>
+#include <SFGUI/Widgets.hpp>
 
 using namespace std;
 using namespace sf;
@@ -26,7 +28,7 @@ using namespace sf;
 class AssetManager{
 public:
     AssetManager();
-    vector<Sprite*> sprites;
+    vector<string*> imageAbsolutePaths;
     
 private:
     void loadTextures();
