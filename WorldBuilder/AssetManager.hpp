@@ -25,11 +25,10 @@ using namespace sf;
 
 class AssetManager{
 public:
-    static AssetManager& instance();
+    AssetManager();
     vector<Sprite*> sprites;
     
 private:
-    AssetManager();
     void loadTextures();
     static const char* RESOURCE_FOLDER_PATH;
 };

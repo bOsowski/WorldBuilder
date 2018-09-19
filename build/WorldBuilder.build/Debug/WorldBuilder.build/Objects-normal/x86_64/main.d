@@ -89,4 +89,5 @@ dependencies: \
   /Library/Frameworks/SFML.framework/Headers/Graphics/Sprite.hpp \
   /Library/Frameworks/SFML.framework/Headers/Graphics/Text.hpp \
   /Users/bOsowski/Documents/XCode/WorldBuilder/WorldBuilder/AssetManager.hpp \
-  /Users/bOsowski/Documents/XCode/WorldBuilder/WorldBuilder/ResourcePath.hpp
+  /Users/bOsowski/Documents/XCode/WorldBuilder/WorldBuilder/ResourcePath.hpp \
+  /Users/bOsowski/Documents/XCode/WorldBuilder/WorldBuilder/UserInterface.hpp

@@ -14,7 +14,6 @@ AssetManager::AssetManager(){
     DIR *dir;
     struct dirent *ent;
     if ((dir = opendir (RESOURCE_FOLDER_PATH)) != NULL) {
-        /* print all the files and directories within directory */
         while ((ent = readdir (dir)) != NULL) {
             if(string(ent->d_name) == "." || string(ent->d_name) == "..")continue;
             
@@ -35,7 +34,4 @@ AssetManager::AssetManager(){
     }
 }
 
-AssetManager& AssetManager::instance(){
-    static AssetManager* instance = new AssetManager();
-    return *instance;
-}
+

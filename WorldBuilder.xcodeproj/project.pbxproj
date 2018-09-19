@@ -13,6 +13,7 @@
 		08558D6321506E1B00320B1A /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08558D6221506E1B00320B1A /* sansation.ttf */; };
 		08558D6521506E1B00320B1A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 08558D6421506E1B00320B1A /* icon.png */; };
 		08558D6F2150711500320B1A /* AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08558D6D2150711500320B1A /* AssetManager.cpp */; };
+		08558D72215118F200320B1A /* UserInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08558D70215118F200320B1A /* UserInterface.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		08558D6B215070CD00320B1A /* Sprite-0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Sprite-0001.png"; path = "../../../AssetManager/AssetManager/Resources/Sprite-0001.png"; sourceTree = "<group>"; };
 		08558D6D2150711500320B1A /* AssetManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AssetManager.cpp; sourceTree = "<group>"; };
 		08558D6E2150711500320B1A /* AssetManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AssetManager.hpp; sourceTree = "<group>"; };
+		08558D70215118F200320B1A /* UserInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UserInterface.cpp; sourceTree = "<group>"; };
+		08558D71215118F200320B1A /* UserInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UserInterface.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				08558D5A21506E1B00320B1A /* ResourcePath.hpp */,
 				08558D5B21506E1B00320B1A /* main.cpp */,
 				08558D6D2150711500320B1A /* AssetManager.cpp */,
+				08558D70215118F200320B1A /* UserInterface.cpp */,
+				08558D71215118F200320B1A /* UserInterface.hpp */,
 				08558D6E2150711500320B1A /* AssetManager.hpp */,
 				08558D5D21506E1B00320B1A /* Resources */,
 				08558D5621506E1B00320B1A /* Supporting Files */,
@@ -179,6 +184,7 @@
 			files = (
 				08558D6F2150711500320B1A /* AssetManager.cpp in Sources */,
 				08558D5C21506E1B00320B1A /* main.cpp in Sources */,
+				08558D72215118F200320B1A /* UserInterface.cpp in Sources */,
 				08558D5921506E1B00320B1A /* ResourcePath.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
