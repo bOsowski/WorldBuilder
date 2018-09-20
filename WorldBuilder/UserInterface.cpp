@@ -12,6 +12,16 @@ UserInterface::UserInterface(){
     render();
 }
 
+sf::Vector2f* UserInterface::roundTo(const sf::Vector2i& position, const sf::Vector2<unsigned int>& roundTo){
+    cout << "(" << position.x << ", " << position.y << ")" << endl;
+    sf::Vector2f* rounded = new Vector2f();
+    rounded->x = roundTo.x * (int)round(position.x / roundTo.x);
+    rounded->y = roundTo.y * (int)round(position.y / roundTo.y);
+    cout << "(" << rounded->x << ", " << rounded->y << ")" << endl;
+    return rounded;
+}
+
+
 void UserInterface::displayAvailableSprites(vector<sf::Sprite*> sprites){
     
 }
@@ -44,8 +54,6 @@ void UserInterface::render(){
     canvasWindow->Add( canvas );
     box->Pack(canvasWindow);
     auto table = sfg::Table::Create();
-    
-    
     
     for(string* path: assetManager.imageAbsolutePaths){
         cout << "path = " + *path << endl;
@@ -91,8 +99,8 @@ void UserInterface::render(){
             if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && currentlyPickedImage != nullptr){
                 sf::Sprite* sprite = new Sprite();
                 sprite->setTexture(*currentlyPickedImage);
-                sprite->setOrigin(sprite->getTexture()->getSize().x/2, sprite->getTexture()->getSize().y/2);
-                sprite->setPosition((sf::Vector2f)sf::Mouse::getPosition(mainWindow));
+                sprite->setOrigin(sprite->getTexture()->getSize().x-7, sprite->getTexture()->getSize().y+18.5f);
+                sprite->setPosition(*roundTo(sf::Mouse::getPosition(mainWindow), currentlyPickedImage->getSize()));
                 world.push_back(sprite);
             }
         }

@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "AssetManager.hpp"
 #include <map>
+#include <math.h>
 
 class UserInterface{
 public:
@@ -19,7 +20,6 @@ public:
     RenderWindow mainWindow{VideoMode(1600, 1200), "Asset Manager"};
     map<sfg::Button*, sf::Texture> buttonMap;
     const sf::Texture* currentlyPickedImage = nullptr;
-    
     void displayAvailableSprites(vector<Sprite*> sprites);
     void render();
 private:
@@ -27,5 +27,6 @@ private:
     UserInterface();
     const float padding = 20;
     vector<sf::Sprite*> world;
+    sf::Vector2f* roundTo(const sf::Vector2i& position, const sf::Vector2<unsigned int>& roundTo);
 };
 #endif /* UserInterface_hpp */
