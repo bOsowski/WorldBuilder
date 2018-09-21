@@ -83,6 +83,10 @@ void UserInterface::render(){
     window->Add( box );
     cout<<"Window size = ("<<mainWindow.getSize().x << ", " << mainWindow.getSize().y << ")\n";
 
+    Vector2i* originalMousePosition = nullptr;
+    
+    
+    Vector2i* originalWorldPosition = new Vector2i(canvas->GetAbsolutePosition());
     while (mainWindow.isOpen())
     {
         // Process events
@@ -90,13 +94,27 @@ void UserInterface::render(){
         while (mainWindow.pollEvent(event))
         {
             window->HandleEvent( event );
+           // cout << "Pressing key" << event.key.code<<endl;
+
             if (event.type == sf::Event::Closed) {
                 mainWindow.close();
             }
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
-                mainWindow.close();
+            if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape){
+                for(Sprite* sprite: world){
+                    sprite->setPosition(*roundTo(*originalWorldPosition + (Vector2i)sprite->getPosition(), currentlyPickedImage->getSize()));
+                    canvas->Draw(*sprite);
+                }
             }
-            if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && currentlyPickedImage != nullptr){
+            if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space){
+                originalMousePosition = new Vector2i(sf::Mouse::getPosition(mainWindow));
+            }
+            else if(event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Space){
+                for(Sprite* sprite: world){
+                    sprite->setPosition(*roundTo((sf::Mouse::getPosition(mainWindow) - *originalMousePosition) + (Vector2i)sprite->getPosition(), currentlyPickedImage->getSize()));
+                    canvas->Draw(*sprite);
+                }
+            }
+            else if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && currentlyPickedImage != nullptr){
                 sf::Sprite* sprite = new Sprite();
                 sprite->setTexture(*currentlyPickedImage);
                 sprite->setOrigin(sprite->getTexture()->getSize().x-7, sprite->getTexture()->getSize().y+18.5f);
