@@ -15,6 +15,13 @@
 		08558D6F2150711500320B1A /* AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08558D6D2150711500320B1A /* AssetManager.cpp */; };
 		08558D72215118F200320B1A /* UserInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08558D70215118F200320B1A /* UserInterface.cpp */; };
 		08D3D64821526C28001064A5 /* libsfgui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D3D64721526C28001064A5 /* libsfgui.dylib */; };
+		08E95C422155625F001B9DC1 /* WorldExporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08E95C402155625F001B9DC1 /* WorldExporter.cpp */; };
+		08E95C4F21556767001B9DC1 /* rapidxml_iterators.hpp in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E95C4B21556767001B9DC1 /* rapidxml_iterators.hpp */; };
+		08E95C5021556767001B9DC1 /* rapidxml.hpp in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E95C4C21556767001B9DC1 /* rapidxml.hpp */; };
+		08E95C5121556767001B9DC1 /* rapidxml_print.hpp in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E95C4D21556767001B9DC1 /* rapidxml_print.hpp */; };
+		08E95C5221556767001B9DC1 /* rapidxml_utils.hpp in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E95C4E21556767001B9DC1 /* rapidxml_utils.hpp */; };
+		08E95C5521557052001B9DC1 /* Tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08E95C5321557052001B9DC1 /* Tile.cpp */; };
+		08E95C58215577AF001B9DC1 /* TextureContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08E95C56215577AF001B9DC1 /* TextureContainer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -250,6 +257,16 @@
 		08D3D7F72152F152001064A5 /* terrain2 [www.imagesplitter.net]-1-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terrain2 [www.imagesplitter.net]-1-6.png"; sourceTree = "<group>"; };
 		08D3D7F82152F152001064A5 /* terrain2 [www.imagesplitter.net]-15-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terrain2 [www.imagesplitter.net]-15-0.png"; sourceTree = "<group>"; };
 		08D3D7F92152F152001064A5 /* terrain2 [www.imagesplitter.net]-5-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terrain2 [www.imagesplitter.net]-5-7.png"; sourceTree = "<group>"; };
+		08E95C402155625F001B9DC1 /* WorldExporter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = WorldExporter.cpp; sourceTree = "<group>"; };
+		08E95C412155625F001B9DC1 /* WorldExporter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = WorldExporter.hpp; sourceTree = "<group>"; };
+		08E95C4B21556767001B9DC1 /* rapidxml_iterators.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = rapidxml_iterators.hpp; path = "../../../Downloads/rapidxml-1.13/rapidxml_iterators.hpp"; sourceTree = "<group>"; };
+		08E95C4C21556767001B9DC1 /* rapidxml.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = rapidxml.hpp; path = "../../../Downloads/rapidxml-1.13/rapidxml.hpp"; sourceTree = "<group>"; };
+		08E95C4D21556767001B9DC1 /* rapidxml_print.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = rapidxml_print.hpp; path = "../../../Downloads/rapidxml-1.13/rapidxml_print.hpp"; sourceTree = "<group>"; };
+		08E95C4E21556767001B9DC1 /* rapidxml_utils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = rapidxml_utils.hpp; path = "../../../Downloads/rapidxml-1.13/rapidxml_utils.hpp"; sourceTree = "<group>"; };
+		08E95C5321557052001B9DC1 /* Tile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tile.cpp; sourceTree = "<group>"; };
+		08E95C5421557052001B9DC1 /* Tile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tile.hpp; sourceTree = "<group>"; };
+		08E95C56215577AF001B9DC1 /* TextureContainer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureContainer.cpp; sourceTree = "<group>"; };
+		08E95C57215577AF001B9DC1 /* TextureContainer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureContainer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +274,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08E95C4F21556767001B9DC1 /* rapidxml_iterators.hpp in Frameworks */,
+				08E95C5021556767001B9DC1 /* rapidxml.hpp in Frameworks */,
+				08E95C5121556767001B9DC1 /* rapidxml_print.hpp in Frameworks */,
+				08E95C5221556767001B9DC1 /* rapidxml_utils.hpp in Frameworks */,
 				08D3D64821526C28001064A5 /* libsfgui.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,15 +305,21 @@
 		08558D5521506E1B00320B1A /* WorldBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				08558D5821506E1B00320B1A /* ResourcePath.mm */,
-				08558D5A21506E1B00320B1A /* ResourcePath.hpp */,
-				08558D5B21506E1B00320B1A /* main.cpp */,
 				08558D6D2150711500320B1A /* AssetManager.cpp */,
-				08558D70215118F200320B1A /* UserInterface.cpp */,
-				08558D71215118F200320B1A /* UserInterface.hpp */,
 				08558D6E2150711500320B1A /* AssetManager.hpp */,
+				08E95C56215577AF001B9DC1 /* TextureContainer.cpp */,
+				08E95C57215577AF001B9DC1 /* TextureContainer.hpp */,
+				08558D5B21506E1B00320B1A /* main.cpp */,
+				08558D5A21506E1B00320B1A /* ResourcePath.hpp */,
+				08558D5821506E1B00320B1A /* ResourcePath.mm */,
 				08558D5D21506E1B00320B1A /* Resources */,
 				08558D5621506E1B00320B1A /* Supporting Files */,
+				08E95C5321557052001B9DC1 /* Tile.cpp */,
+				08E95C5421557052001B9DC1 /* Tile.hpp */,
+				08558D70215118F200320B1A /* UserInterface.cpp */,
+				08558D71215118F200320B1A /* UserInterface.hpp */,
+				08E95C402155625F001B9DC1 /* WorldExporter.cpp */,
+				08E95C412155625F001B9DC1 /* WorldExporter.hpp */,
 			);
 			path = WorldBuilder;
 			sourceTree = "<group>";
@@ -545,6 +572,10 @@
 		08C707032152691E003493AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08E95C4B21556767001B9DC1 /* rapidxml_iterators.hpp */,
+				08E95C4D21556767001B9DC1 /* rapidxml_print.hpp */,
+				08E95C4E21556767001B9DC1 /* rapidxml_utils.hpp */,
+				08E95C4C21556767001B9DC1 /* rapidxml.hpp */,
 				08D3D64721526C28001064A5 /* libsfgui.dylib */,
 				08C7070621526969003493AA /* SFGUI-0.3.2 */,
 				08C707042152691F003493AA /* SFGUI */,
@@ -639,8 +670,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08E95C422155625F001B9DC1 /* WorldExporter.cpp in Sources */,
+				08E95C58215577AF001B9DC1 /* TextureContainer.cpp in Sources */,
 				08558D6F2150711500320B1A /* AssetManager.cpp in Sources */,
 				08558D5C21506E1B00320B1A /* main.cpp in Sources */,
+				08E95C5521557052001B9DC1 /* Tile.cpp in Sources */,
 				08558D72215118F200320B1A /* UserInterface.cpp in Sources */,
 				08558D5921506E1B00320B1A /* ResourcePath.mm in Sources */,
 			);

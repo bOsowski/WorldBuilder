@@ -8,9 +8,7 @@
 
 int main(int, char const**)
 {
-    
     UserInterface::instance();
 
     return EXIT_SUCCESS;
 }
-

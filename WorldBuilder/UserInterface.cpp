@@ -12,18 +12,13 @@ UserInterface::UserInterface(){
     render();
 }
 
-sf::Vector2f* UserInterface::roundTo(const sf::Vector2i& position, const sf::Vector2<unsigned int>& roundTo){
-    cout << "(" << position.x << ", " << position.y << ")" << endl;
+sf::Vector2f* UserInterface::roundTo(const sf::Vector2i& position, const sf::Vector2<int>& roundTo){
     sf::Vector2f* rounded = new Vector2f();
     rounded->x = roundTo.x * (int)round(position.x / roundTo.x);
     rounded->y = roundTo.y * (int)round(position.y / roundTo.y);
-    cout << "(" << rounded->x << ", " << rounded->y << ")" << endl;
+    //return rounded;
+    sf::Vector2f* original = new Vector2f(position);
     return rounded;
-}
-
-
-void UserInterface::displayAvailableSprites(vector<sf::Sprite*> sprites){
-    
 }
 
 UserInterface& UserInterface::instance(){
@@ -55,26 +50,18 @@ void UserInterface::render(){
     box->Pack(canvasWindow);
     auto table = sfg::Table::Create();
     
-    for(string* path: assetManager.imageAbsolutePaths){
-        cout << "path = " + *path << endl;
-        sf::Image imageSource;
+    for(TextureContainer* container : assetManager.textureContainers){
+        auto button = sfg::Button::Create();
         auto image = sfg::Image::Create();
-        if( imageSource.loadFromFile( *path ) ) {
-            image->SetImage( imageSource );
-            auto button = sfg::Button::Create();
-            //currentlyPickedImage = (const sf::Image*)button->GetImage().get();
-            button->SetImage(image);
-            button->GetSignal( sfg::Widget::OnLeftClick ).Connect( [button, this] {
-                std::map<sfg::Button*, sf::Texture>::iterator it = buttonMap.find(button.get());
-                currentlyPickedImage = &it->second;
-            });
-            sf::Texture texture;
-            texture.loadFromImage(imageSource);
-            buttonMap.emplace(button.get(), texture);
-            scrolled_window_box->Pack(button);
-        }
+        image->SetImage(container->image);
+        button->SetImage(image);
+        button->GetSignal( sfg::Widget::OnLeftClick ).Connect( [button, this] {
+            std::map<sfg::Button*, sf::Texture*>::iterator it = buttonMap.find(button.get());
+            currentlyPickedImage = it->second;
+        });
+        buttonMap.emplace(button.get(), &container->texture);
+        scrolled_window_box->Pack(button);
     }
-    
 
     scrolledWindow->SetRequisition(Vector2f(64, mainWindow.getSize().y/2));
     box->Pack(scrolledWindow, false, false);
@@ -100,25 +87,21 @@ void UserInterface::render(){
                 mainWindow.close();
             }
             if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape){
-                for(Sprite* sprite: world){
-                    sprite->setPosition(*roundTo(*originalWorldPosition + (Vector2i)sprite->getPosition(), currentlyPickedImage->getSize()));
-                    canvas->Draw(*sprite);
-                }
             }
-            if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space){
+            if(event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Right){
                 originalMousePosition = new Vector2i(sf::Mouse::getPosition(mainWindow));
             }
-            else if(event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Space){
+            else if(event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Right){
                 for(Sprite* sprite: world){
-                    sprite->setPosition(*roundTo((sf::Mouse::getPosition(mainWindow) - *originalMousePosition) + (Vector2i)sprite->getPosition(), currentlyPickedImage->getSize()));
-                    canvas->Draw(*sprite);
+                    sprite->setPosition(*roundTo((sf::Mouse::getPosition(mainWindow) - *originalMousePosition) + (Vector2i)sprite->getPosition(), (Vector2i)currentlyPickedImage->getSize()));
                 }
+                cout<<"position of first sprite = ("<<world[0]->getPosition().x<<", " << world[0]->getPosition().y<< ")"<<endl;
             }
             else if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && currentlyPickedImage != nullptr){
                 sf::Sprite* sprite = new Sprite();
                 sprite->setTexture(*currentlyPickedImage);
                 sprite->setOrigin(sprite->getTexture()->getSize().x-7, sprite->getTexture()->getSize().y+18.5f);
-                sprite->setPosition(*roundTo(sf::Mouse::getPosition(mainWindow), currentlyPickedImage->getSize()));
+                sprite->setPosition(*roundTo(sf::Mouse::getPosition(mainWindow), (Vector2i)currentlyPickedImage->getSize()));
                 world.push_back(sprite);
             }
         }

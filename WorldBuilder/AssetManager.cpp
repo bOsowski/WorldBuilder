@@ -20,9 +20,11 @@ AssetManager::AssetManager(){
             string *full_path = new string();
             *full_path = string(RESOURCE_FOLDER_PATH)+ "/" + string(ent->d_name);
             cout << "Trying to load from " + *full_path << endl;
-            sf::Image imageSource;
-            if (imageSource.loadFromFile(*full_path)) {
-                imageAbsolutePaths.push_back(full_path);
+            TextureContainer* textureContainer = new TextureContainer();
+            if ( textureContainer->image.loadFromFile(*full_path)) {
+                textureContainer->texture.loadFromImage(textureContainer->image);
+                textureContainer->imageLocation = *full_path;
+                textureContainers.push_back(textureContainer);
                 cout << "Loaded " + *full_path << endl;
             }
         }
