@@ -18,6 +18,7 @@ public:
     sf::Texture texture;
     sf::Image image;
     std::string imageLocation;
+    int index;
 };
 
 #endif /* TextureContainer_hpp */

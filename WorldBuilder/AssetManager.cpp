@@ -28,6 +28,9 @@ AssetManager::AssetManager(){
                 cout << "Loaded " + *full_path << endl;
             }
         }
+        sort(textureContainers.begin(),textureContainers.end(),[](TextureContainer* a, TextureContainer* b){
+            return a->imageLocation.compare(b->imageLocation);
+        });
         closedir (dir);
     } else {
         /* could not open directory */
@@ -35,5 +38,19 @@ AssetManager::AssetManager(){
         return EXIT_FAILURE;
     }
 }
+
+void AssetManager::refreshIndexOfTextureContainers(){
+    int counter = 0;
+    for(TextureContainer* container: textureContainers){
+        container->index = counter++;
+    }
+}
+
+const vector<TextureContainer*>& AssetManager::getTextureContainers(){
+    refreshIndexOfTextureContainers();
+    return textureContainers;
+}
+
+
 
 

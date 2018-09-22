@@ -20,7 +20,6 @@
 		08E95C5021556767001B9DC1 /* rapidxml.hpp in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E95C4C21556767001B9DC1 /* rapidxml.hpp */; };
 		08E95C5121556767001B9DC1 /* rapidxml_print.hpp in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E95C4D21556767001B9DC1 /* rapidxml_print.hpp */; };
 		08E95C5221556767001B9DC1 /* rapidxml_utils.hpp in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E95C4E21556767001B9DC1 /* rapidxml_utils.hpp */; };
-		08E95C5521557052001B9DC1 /* Tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08E95C5321557052001B9DC1 /* Tile.cpp */; };
 		08E95C58215577AF001B9DC1 /* TextureContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08E95C56215577AF001B9DC1 /* TextureContainer.cpp */; };
 /* End PBXBuildFile section */
 
@@ -263,8 +262,6 @@
 		08E95C4C21556767001B9DC1 /* rapidxml.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = rapidxml.hpp; path = "../../../Downloads/rapidxml-1.13/rapidxml.hpp"; sourceTree = "<group>"; };
 		08E95C4D21556767001B9DC1 /* rapidxml_print.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = rapidxml_print.hpp; path = "../../../Downloads/rapidxml-1.13/rapidxml_print.hpp"; sourceTree = "<group>"; };
 		08E95C4E21556767001B9DC1 /* rapidxml_utils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = rapidxml_utils.hpp; path = "../../../Downloads/rapidxml-1.13/rapidxml_utils.hpp"; sourceTree = "<group>"; };
-		08E95C5321557052001B9DC1 /* Tile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tile.cpp; sourceTree = "<group>"; };
-		08E95C5421557052001B9DC1 /* Tile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tile.hpp; sourceTree = "<group>"; };
 		08E95C56215577AF001B9DC1 /* TextureContainer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureContainer.cpp; sourceTree = "<group>"; };
 		08E95C57215577AF001B9DC1 /* TextureContainer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureContainer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -314,8 +311,6 @@
 				08558D5821506E1B00320B1A /* ResourcePath.mm */,
 				08558D5D21506E1B00320B1A /* Resources */,
 				08558D5621506E1B00320B1A /* Supporting Files */,
-				08E95C5321557052001B9DC1 /* Tile.cpp */,
-				08E95C5421557052001B9DC1 /* Tile.hpp */,
 				08558D70215118F200320B1A /* UserInterface.cpp */,
 				08558D71215118F200320B1A /* UserInterface.hpp */,
 				08E95C402155625F001B9DC1 /* WorldExporter.cpp */,
@@ -674,7 +669,6 @@
 				08E95C58215577AF001B9DC1 /* TextureContainer.cpp in Sources */,
 				08558D6F2150711500320B1A /* AssetManager.cpp in Sources */,
 				08558D5C21506E1B00320B1A /* main.cpp in Sources */,
-				08E95C5521557052001B9DC1 /* Tile.cpp in Sources */,
 				08558D72215118F200320B1A /* UserInterface.cpp in Sources */,
 				08558D5921506E1B00320B1A /* ResourcePath.mm in Sources */,
 			);

@@ -21,7 +21,6 @@
 #include <dirent.h>
 #include <SFGUI/SFGUI.hpp>
 #include <SFGUI/Widgets.hpp>
-#include "Tile.hpp"
 #include "TextureContainer.hpp"
 
 using namespace std;
@@ -30,9 +29,11 @@ using namespace sf;
 class AssetManager{
 public:
     AssetManager();
-    vector<TextureContainer*> textureContainers;
+    void refreshIndexOfTextureContainers();
+    const vector<TextureContainer*>& getTextureContainers();
     
 private:
+    vector<TextureContainer*> textureContainers;
     void loadTextures();
     static const char* RESOURCE_FOLDER_PATH;
 };

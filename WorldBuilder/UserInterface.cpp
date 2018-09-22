@@ -50,7 +50,7 @@ void UserInterface::render(){
     box->Pack(canvasWindow);
     auto table = sfg::Table::Create();
     
-    for(TextureContainer* container : assetManager.textureContainers){
+    for(TextureContainer* container : assetManager.getTextureContainers()){
         auto button = sfg::Button::Create();
         auto image = sfg::Image::Create();
         image->SetImage(container->image);
@@ -87,6 +87,8 @@ void UserInterface::render(){
                 mainWindow.close();
             }
             if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape){
+                WorldExporter::exportWorld(world, assetManager.getTextureContainers());
+                cout << "World Exported!" << endl;
             }
             if(event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Right){
                 originalMousePosition = new Vector2i(sf::Mouse::getPosition(mainWindow));
@@ -103,6 +105,7 @@ void UserInterface::render(){
                 sprite->setOrigin(sprite->getTexture()->getSize().x-7, sprite->getTexture()->getSize().y+18.5f);
                 sprite->setPosition(*roundTo(sf::Mouse::getPosition(mainWindow), (Vector2i)currentlyPickedImage->getSize()));
                 world.push_back(sprite);
+                cout << "Added a tile at (" << sprite->getPosition().x << ", " << sprite->getPosition().y << ")" << endl;
             }
         }
         

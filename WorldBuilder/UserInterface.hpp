@@ -14,6 +14,7 @@
 #include <map>
 #include <math.h>
 #include "TextureContainer.hpp"
+#include "WorldExporter.hpp"
 
 class UserInterface{
 public:
