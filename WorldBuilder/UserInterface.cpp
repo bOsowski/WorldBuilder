@@ -40,7 +40,7 @@ void UserInterface::render(){
     
     
     auto scrolledWindow = sfg::ScrolledWindow::Create();
-    scrolledWindow->SetScrollbarPolicy( sfg::ScrolledWindow::VERTICAL_AUTOMATIC | sfg::ScrolledWindow::HORIZONTAL_NEVER );
+    scrolledWindow->SetScrollbarPolicy( sfg::ScrolledWindow::VERTICAL_AUTOMATIC | sfg::ScrolledWindow::HORIZONTAL_AUTOMATIC );
     scrolledWindow->AddWithViewport(scrolled_window_box);
     
     auto canvasWindow = sfg::Window::Create(sfg::Window::Style::BACKGROUND);

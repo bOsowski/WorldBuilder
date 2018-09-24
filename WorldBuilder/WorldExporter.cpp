@@ -38,7 +38,7 @@ bool WorldExporter::exportWorld(const vector<sf::Sprite*>& worldData, const vect
     root->append_node(world);
     doc.append_node(root);
     
-    std::ofstream file_stored("world_data.xml");
+    std::ofstream file_stored("/Users/bOsowski/Desktop/world_data.xml");
     file_stored << doc;
     file_stored.close();
     doc.clear();
