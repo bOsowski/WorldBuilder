@@ -50,6 +50,12 @@ void UserInterface::render(){
     box->Pack(canvasWindow);
     auto table = sfg::Table::Create();
     
+    auto loose_sprite_window_box_internal = sfg::Box::Create( sfg::Box::Orientation::HORIZONTAL);
+    
+    auto looseSpriteWindowInternal = sfg::ScrolledWindow::Create();
+    looseSpriteWindowInternal->SetScrollbarPolicy( sfg::ScrolledWindow::VERTICAL_NEVER | sfg::ScrolledWindow::HORIZONTAL_NEVER );
+    looseSpriteWindowInternal->AddWithViewport(loose_sprite_window_box_internal);
+    int counter = 0;
     for(TextureContainer* container : assetManager.getTextureContainers()){
         auto button = sfg::Button::Create();
         auto image = sfg::Image::Create();
@@ -59,17 +65,29 @@ void UserInterface::render(){
             std::map<sfg::Button*, sf::Texture*>::iterator it = buttonMap.find(button.get());
             currentlyPickedImage = it->second;
         });
+        
         buttonMap.emplace(button.get(), &container->texture);
-        scrolled_window_box->Pack(button);
+        
+        if(counter > 10){
+            loose_sprite_window_box_internal = sfg::Box::Create( sfg::Box::Orientation::HORIZONTAL);
+            looseSpriteWindowInternal = sfg::ScrolledWindow::Create();
+            looseSpriteWindowInternal->SetScrollbarPolicy( sfg::ScrolledWindow::VERTICAL_NEVER | sfg::ScrolledWindow::HORIZONTAL_NEVER );
+            looseSpriteWindowInternal->AddWithViewport(loose_sprite_window_box_internal);
+            scrolled_window_box->Pack(loose_sprite_window_box_internal);
+            counter = 0;
+        }
+        loose_sprite_window_box_internal->Pack(button);
+        counter++;
+        
     }
-
-    scrolledWindow->SetRequisition(Vector2f(64, mainWindow.getSize().y/2));
+    
+    scrolledWindow->SetRequisition(Vector2f(462, mainWindow.getSize().y/2));
     box->Pack(scrolledWindow, false, false);
     
     
     window->Add( box );
     cout<<"Window size = ("<<mainWindow.getSize().x << ", " << mainWindow.getSize().y << ")\n";
-
+    
     Vector2i* originalMousePosition = nullptr;
     
     
@@ -81,8 +99,8 @@ void UserInterface::render(){
         while (mainWindow.pollEvent(event))
         {
             window->HandleEvent( event );
-           // cout << "Pressing key" << event.key.code<<endl;
-
+            // cout << "Pressing key" << event.key.code<<endl;
+            
             if (event.type == sf::Event::Closed) {
                 mainWindow.close();
             }

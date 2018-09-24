@@ -31,6 +31,8 @@ AssetManager::AssetManager(){
         sort(textureContainers.begin(),textureContainers.end(),[](TextureContainer* a, TextureContainer* b){
             return a->imageLocation.compare(b->imageLocation);
         });
+        refreshIndexOfTextureContainers();
+
         closedir (dir);
     } else {
         /* could not open directory */
@@ -47,7 +49,6 @@ void AssetManager::refreshIndexOfTextureContainers(){
 }
 
 const vector<TextureContainer*>& AssetManager::getTextureContainers(){
-    refreshIndexOfTextureContainers();
     return textureContainers;
 }
 
