@@ -27,6 +27,7 @@ public:
 private:
     AssetManager assetManager{};
     UserInterface();
+    void createRotateButtons(std::shared_ptr<sfg::Box> box);
     const float padding = 20;
     vector<sf::Sprite*> world;
     sf::Vector2f* roundTo(const sf::Vector2i& position, const sf::Vector2<int>& roundTo);

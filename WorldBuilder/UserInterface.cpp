@@ -26,6 +26,51 @@ UserInterface& UserInterface::instance(){
     return *instance;
 }
 
+void UserInterface::createRotateButtons(std::shared_ptr<sfg::Box> box){
+    //top: flip horizontal to the right
+    //right: rotate to clockwise
+    //bottom: flip vertical top to bottom
+    //left: rotate counterclockwise
+    
+    auto horizontalGridTop = sfg::Box::Create();
+    auto horizontalGridMiddle = sfg::Box::Create();
+    auto horizontalGridBottom = sfg::Box::Create();
+    
+    box->Pack(horizontalGridTop);
+    box->Pack(horizontalGridMiddle);
+    box->Pack(horizontalGridBottom);
+
+    auto buttonTopLeft = sfg::Button::Create();
+    auto buttonTop = sfg::Button::Create();
+    auto buttonTopRight = sfg::Button::Create();
+    
+    auto buttonRight = sfg::Button::Create();
+    auto buttonLeft = sfg::Button::Create();
+    auto buttonCenterCenter = sfg::Button::Create();
+    
+    auto buttonBottomLeft = sfg::Button::Create();
+    auto buttonBottom = sfg::Button::Create();
+    auto buttonBottomRight = sfg::Button::Create();
+    
+    buttonTop->SetLabel("Button Top");
+    buttonRight->SetLabel("Button Right");
+    buttonBottom->SetLabel("Button Bottom");
+    buttonLeft->SetLabel("Button Left");
+    
+    
+    horizontalGridTop->Pack(buttonTopLeft);
+    horizontalGridTop->Pack(buttonTop);
+    horizontalGridTop->Pack(buttonTopRight);
+    
+    horizontalGridMiddle->Pack(buttonLeft);
+    horizontalGridMiddle->Pack(buttonCenterCenter);
+    horizontalGridMiddle->Pack(buttonRight);
+    
+    horizontalGridBottom->Pack(buttonBottomLeft);
+    horizontalGridBottom->Pack(buttonBottom);
+    horizontalGridBottom->Pack(buttonBottomRight);
+}
+
 
 void UserInterface::render(){
     
@@ -38,7 +83,7 @@ void UserInterface::render(){
     auto box = sfg::Box::Create( sfg::Box::Orientation::HORIZONTAL, 5.f );
     auto scrolled_window_box = sfg::Box::Create( sfg::Box::Orientation::VERTICAL);
     
-    
+    createRotateButtons(scrolled_window_box);
     auto scrolledWindow = sfg::ScrolledWindow::Create();
     scrolledWindow->SetScrollbarPolicy( sfg::ScrolledWindow::VERTICAL_AUTOMATIC | sfg::ScrolledWindow::HORIZONTAL_AUTOMATIC );
     scrolledWindow->AddWithViewport(scrolled_window_box);
