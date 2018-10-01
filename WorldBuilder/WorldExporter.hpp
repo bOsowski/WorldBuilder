@@ -12,9 +12,9 @@
 #include <stdio.h>
 #include <vector>
 #include <SFML/Graphics.hpp>
-#include <TextureContainer.hpp>
-#include <AssetManager.hpp>
-#include <rapidxml.hpp>
+#include "TextureContainer.hpp"
+#include "AssetManager.hpp"
+#include "rapidxml.hpp"
 #include "rapidxml_print.hpp"
 #include <sstream>
 #include <fstream>
