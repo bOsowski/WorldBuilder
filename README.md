@@ -8,9 +8,9 @@ Choose the sprites as required and process to build the world!
 Left click - > select sprite, draw with the selected sprite.
 Right click - > navigate around the world view.
 ESC - > export the world to xml.
+L -> import the world from an xml.
 
 
 #### Todo: 
 * Add in icons and functionality for sprite manipulation (rotation, flipping etc.)
-* Allow the user to pick a file from which the world will be loaded.
 * Add a layering functionality. This will require a modification of the XML saving logic also.

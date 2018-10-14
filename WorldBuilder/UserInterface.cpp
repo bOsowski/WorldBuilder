@@ -83,7 +83,7 @@ void UserInterface::render(){
     auto box = sfg::Box::Create( sfg::Box::Orientation::HORIZONTAL, 5.f );
     auto scrolled_window_box = sfg::Box::Create( sfg::Box::Orientation::VERTICAL);
     
-    createRotateButtons(scrolled_window_box);
+    //createRotateButtons(scrolled_window_box);
     auto scrolledWindow = sfg::ScrolledWindow::Create();
     scrolledWindow->SetScrollbarPolicy( sfg::ScrolledWindow::VERTICAL_AUTOMATIC | sfg::ScrolledWindow::HORIZONTAL_AUTOMATIC );
     scrolledWindow->AddWithViewport(scrolled_window_box);
