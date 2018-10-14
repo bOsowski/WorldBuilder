@@ -14,7 +14,7 @@
 #include <map>
 #include <math.h>
 #include "TextureContainer.hpp"
-#include "WorldExporter.hpp"
+#include "DataManager.hpp"
 
 class UserInterface{
 public:
@@ -24,12 +24,13 @@ public:
     const sf::Texture* currentlyPickedImage = nullptr;
     void displayAvailableSprites(vector<Sprite*> sprites);
     void render();
+    static void adjustSprite(sf::Sprite *sprite, sf::Texture& texture, Vector2f position);
 private:
     AssetManager assetManager{};
     UserInterface();
     void createRotateButtons(std::shared_ptr<sfg::Box> box);
     const float padding = 20;
     vector<sf::Sprite*> world;
-    sf::Vector2f* roundTo(const sf::Vector2i& position, const sf::Vector2<int>& roundTo);
+    static sf::Vector2f* roundTo(const sf::Vector2i& position, const sf::Vector2<int>& roundTo);
 };
 #endif /* UserInterface_hpp */

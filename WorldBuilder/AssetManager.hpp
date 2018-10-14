@@ -30,7 +30,7 @@ class AssetManager{
 public:
     AssetManager();
     void refreshIndexOfTextureContainers();
-    const vector<TextureContainer*>& getTextureContainers();
+    vector<TextureContainer*>& getTextureContainers();
     
 private:
     vector<TextureContainer*> textureContainers;

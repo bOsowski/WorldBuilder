@@ -150,8 +150,12 @@ void UserInterface::render(){
                 mainWindow.close();
             }
             if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape){
-                WorldExporter::exportWorld(world, assetManager.getTextureContainers());
+                DataManager::exportWorld(world, assetManager.getTextureContainers());
                 cout << "World Exported!" << endl;
+            }
+            if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::L){
+                DataManager::importWorld(world, assetManager.getTextureContainers());
+                cout << "World Imported!" << endl;
             }
             if(event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Right){
                 originalMousePosition = new Vector2i(sf::Mouse::getPosition(mainWindow));
@@ -189,3 +193,8 @@ void UserInterface::render(){
     }
 }
 
+void UserInterface::adjustSprite(sf::Sprite *sprite, sf::Texture& texture, Vector2f position){
+    sprite->setTexture(texture);
+    sprite->setOrigin(texture.getSize().x-7, texture.getSize().y+18.5f);
+    sprite->setPosition(*roundTo((const sf::Vector2i)position, (Vector2i)texture.getSize()));
+}

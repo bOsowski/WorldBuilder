@@ -1,14 +1,14 @@
 //
-//  WorldExporter.cpp
+//  DataManager.cpp
 //  WorldBuilder
 //
 //  Created by Bartosz Osowski on 21/09/2018.
 //  Copyright © 2018 Bartosz Osowski. All rights reserved.
 //
 
-#include "WorldExporter.hpp"
+#include "DataManager.hpp"
 
-bool WorldExporter::exportWorld(const vector<sf::Sprite*>& worldData, const vector<TextureContainer*>& textureContainers){
+bool DataManager::exportWorld(const vector<sf::Sprite*>& worldData, const vector<TextureContainer*>& textureContainers){
     rapidxml::xml_document<> doc;
     rapidxml::xml_node<>* decl = doc.allocate_node(rapidxml::node_declaration);
     decl->append_attribute(doc.allocate_attribute("version", "1.0"));
@@ -46,7 +46,48 @@ bool WorldExporter::exportWorld(const vector<sf::Sprite*>& worldData, const vect
     return true;
 }
 
-int* WorldExporter::getSpriteIndex(const vector<TextureContainer*>& textureContainers, sf::Sprite& sprite){
+bool DataManager::importWorld(vector<sf::Sprite *> &worldData, vector<TextureContainer *> &textureContainers){
+    worldData.clear();
+    textureContainers.clear();
+    
+    std::ifstream file_stored("/Users/bOsowski/Desktop/world_data.xml");
+    rapidxml::xml_document<> doc;
+    string stringFileContents = "";
+    string line;
+    while(getline(file_stored, line)){
+        stringFileContents += line+"\n";
+    }
+    
+    doc.parse<0>((char*)stringFileContents.c_str());
+    cout << "Name of my first node is: " << doc.first_node()->name() << "\n";
+    rapidxml::xml_node<> *firstNode = doc.first_node(doc.first_node()->name())->first_node();
+    cout << "Node root has value '" << firstNode->value() << "'\n";
+    
+    //images
+    for(rapidxml::xml_node<> *node = firstNode->first_node(); node; node = node->next_sibling()){
+        TextureContainer* container = new TextureContainer();
+        container->index = stoi(string(node->first_attribute("index")->value()));
+        container->imageLocation = string(node->first_attribute("location")->value());
+        if (container->image.loadFromFile(container->imageLocation)) {
+            container->texture.loadFromImage(container->image);
+        }
+        cout << container->index << " " << container->imageLocation << endl;
+        textureContainers.push_back(container);
+    }
+    
+    //positions
+    for(rapidxml::xml_node<> *node = firstNode->next_sibling()->first_node(); node; node = node->next_sibling()){
+        int index = stoi(string(node->first_attribute("index")->value()));
+        float x = stof(string(node->first_node()->first_attribute("x")->value()));
+        float y = stof(string(node->first_node()->first_attribute("y")->value()));
+        sf::Sprite* sprite = new Sprite();
+        UserInterface::adjustSprite(sprite, textureContainers.at(index)->texture, *new sf::Vector2f(x,y));
+        worldData.push_back(sprite);
+    }
+    return true;
+}
+
+int* DataManager::getSpriteIndex(const vector<TextureContainer*>& textureContainers, sf::Sprite& sprite){
     for(TextureContainer* container: textureContainers){
         if(&(container->texture) == &(*sprite.getTexture())){
             return new int(container->index);

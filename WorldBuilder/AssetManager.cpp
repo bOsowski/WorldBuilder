@@ -47,7 +47,7 @@ void AssetManager::refreshIndexOfTextureContainers(){
     }
 }
 
-const vector<TextureContainer*>& AssetManager::getTextureContainers(){
+vector<TextureContainer*>& AssetManager::getTextureContainers(){
     return textureContainers;
 }
 
